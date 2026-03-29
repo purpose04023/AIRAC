@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050810;
+  --foreground: #f0f4f8;
+  --primary: #00f2ff;
+  --secondary: #bc00ff;
+  --accent: #ff007a;
+  --glass: rgba(10, 15, 30, 0.7);
+  --glass-border: rgba(0, 242, 255, 0.2);
+  --neon-glow: 0 0 10px rgba(0, 242, 255, 0.5), 0 0 20px rgba(0, 242, 255, 0.2);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(0, 242, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(188, 0, 255, 0.05) 0%, transparent 40%);
+}
+
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+
+.neon-text {
+  text-shadow: var(--neon-glow);
+}
+
+.neon-border {
+  border: 1px solid var(--primary);
+  box-shadow: var(--neon-glow);
+}
+
+.cyber-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  border: none;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cyber-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.6);
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.animate-glow {
+  animation: pulse-glow 2s infinite;
+}
